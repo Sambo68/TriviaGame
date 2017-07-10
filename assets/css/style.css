@@ -1,0 +1,74 @@
+html, body{
+  height:100%;
+}
+
+body{
+  background-image: url("../images/Sports.png");
+  text-align: center;
+
+}
+
+#wrapper{
+  padding: 5% 0;
+  background-color: white;
+  width:960px;
+  margin:5% auto;
+  box-sizing: border-box;
+  min-height: 80%;
+}
+
+#subwrapper{
+  position: relative;
+  top:20%;
+}
+
+button{
+  display:block;
+  width:400px;
+  height:100px;
+  margin: 10px auto 0 auto;
+  border-radius: 25px;
+  cursor: pointer;
+  background:transparent;
+  font-size: 42px;;
+}
+
+
+h1{
+  font-family: 'Cherry Cream Soda', cursive;
+  font-size: 6.5em;
+  margin-bottom: 50px;
+  font-weight: bold;
+  color:blue;
+}
+
+h2{
+  font-size: 35px;
+  margin-bottom: 25px;
+}
+
+h3{
+  font-size: 25px;
+  margin-bottom: 10px;
+}
+
+#start{
+  margin-top: 10%;
+  background-color: blue;
+  color: white;
+}
+
+#done{
+  margin-top: 10%;
+  background-color: yellow;
+  color: 0A60BA;
+}
+
+#quiz-area h2{
+  margin-top: 50px;
+}
+
+button:hover {
+  border: 5px solid red;
+  
+}
