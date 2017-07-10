@@ -9,7 +9,7 @@ $(document).on('click', '#done', function(){
   game.done();
 });
 
-//(Questions & Answers) - An object with eight question arrays, eight answers arrays, and eight correct answers.
+//(Questions & Answers) - An object with eight question arrays, eight possible answers arrays, and eight correct answers.
 
 var questions = [{
   question: "What NFL football team had the biggest scoring comeback in the history of the Super Bowl?",
@@ -57,12 +57,12 @@ var game = {
     $('#counter-number').html(game.counter);
 
     if (game.counter === 0){
-      console.log('TIME UP');
+      
       game.done();
     }
   },
 
-//Start the game function and start counting the timer down every 1 second. In this function we will display the timer, question & all possible answers to chose from. radio button.
+//Start the game function and start counting the timer down every 1 second. In this function, we will display the timer, question & all possible answers to chose from by a radio button.
 
   start: function() {
     timer = setInterval(game.countdown, 1000);
@@ -77,11 +77,13 @@ var game = {
     }
     panel.append('<button id="done">Done</button>');
   },
+
+//In this step we will check the coorect answer from the incorrect answer.
+
   done: function(){
 
     $.each($("input[name='question-0']:checked"), function(){
        if ($(this).val() == questions[0].correctAnswer) {
-        console.log(this);
           game.correct++;
       } else {
         game.incorrect++;
@@ -106,7 +108,6 @@ var game = {
     });
     $.each($("input[name='question-3']:checked"), function(){
        if ($(this).val() == questions[3].correctAnswer) {
-        console.log(this);
           game.correct++;
       } else {
         game.incorrect++;
@@ -115,7 +116,6 @@ var game = {
     });  
     $.each($("input[name='question-4']:checked"), function(){
        if ($(this).val() == questions[4].correctAnswer) {
-        console.log(this);
           game.correct++;
       } else {
         game.incorrect++;
@@ -124,7 +124,6 @@ var game = {
     });
     $.each($("input[name='question-5']:checked"), function(){
        if ($(this).val() == questions[5].correctAnswer) {
-        console.log(this);
           game.correct++;
       } else {
         game.incorrect++;
@@ -133,7 +132,6 @@ var game = {
     });
     $.each($("input[name='question-6']:checked"), function(){
        if ($(this).val() == questions[6].correctAnswer) {
-        console.log(this);
           game.correct++;
       } else {
         game.incorrect++;
@@ -142,13 +140,14 @@ var game = {
     });
 	$.each($("input[name='question-7']:checked"), function(){
        if ($(this).val() == questions[7].correctAnswer) {
-        console.log(this);
           game.correct++;
       } else {
         game.incorrect++;
       }
 
     });
+
+//This is the results logic and how the answers displayed.
 
     this.results();
   },
